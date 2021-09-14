@@ -39,25 +39,99 @@ public class Patterns {
         System.out.println();
         pattern16(n);   //pending
         System.out.println();
-       // pattern17(n);
+        pattern17(n);
+        System.out.println();
+        pattern18(n);
+
+    }
+
+    private static void pattern18(int n) {
+
+//      **********
+//      ****  ****
+//      ***    ***
+//      **      **
+//      *        *
+//      *        *
+//      **      **
+//      ***    ***
+//      ****  ****
+//      **********
+
+        patterns3(n);
+        Pattern2(n);
+
+
+
 
     }
 
     private static void pattern17(int n) {
 
-        int count=0;
-        for(int row=0;row<2*n-1;row++)
-        {
-            for(int col=0;col<2*n-1;col++)
-            {
-                if(col<(2*n-1)/2)
-                {
-                    System.out.print(" ");
-                    count++;
-                }
-                //else if(col==(2*n-1)/2|| col==(2*n-1)-count)
-            }
-        }
+        int element=0;
+        int temp=0;
+      for(int row=0;row<2*n-1;row++)
+      {
+
+          if(row<n) {
+              element = 2 * row + 1;
+              temp = row + 1;
+              for (int col = 0; col < 2 * n - 1; col++) {
+                  if (col < (2 * n - 1) / 2 - row) {
+                      System.out.print(" ");
+                  } else if (col == (2 * n - 1) / 2 - row) {
+                      for (int i = 0; i < element; i++) {
+                          if (i < element / 2) {
+                              System.out.print(temp--);
+                          } else {
+                              System.out.print(temp++);
+                          }
+                          col++;
+                      }
+                      temp = 0;
+                  } else {
+                      System.out.print(" ");
+                  }
+              }
+              System.out.println();
+          }else
+          {
+
+              element = 2*((2*n-1)-row)-1;
+
+              int spaceCount=0;
+              for(int col=0;col<2*n-1;col++)
+             {
+                 if(col < row-(2 * n - 1) / 2)
+                 {
+                     System.out.print(" ");
+                     spaceCount++;
+                 }
+                 else if(col==row-(2 * n - 1) / 2)
+                 {
+                     temp=n-spaceCount;
+                     for(int i=0;i<element;i++)
+                     {
+                         if(i<element/2)
+                         {
+                             System.out.print(temp--);
+                         }
+                         else
+                         {
+                             System.out.print(temp++);
+                         }
+                         col++;
+                     }
+
+                 }
+                 else
+                 {
+                     System.out.print(" ");
+                 }
+             }
+              System.out.println();
+          }
+      }
 
     }
 

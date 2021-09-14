@@ -3,6 +3,8 @@ package com.mohsin.java.concept;
 import java.util.Scanner;
 
 public class orderAgnosticBinary {
+    //order Agnostic Binary Search will be applied when we don't know whether given array is sorted in ascending order
+    //or descending order (Beauty of The Questions)
     public static void main(String[] args) {
         int[] arr={1,2,4,5,5,35,64,75,100};
         int key=75;
