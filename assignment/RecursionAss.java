@@ -4,11 +4,33 @@ import java.util.Arrays;
 
 public class RecursionAss {
     public static void main(String[] args) {
-        int [] arr={1,2,-32,4,-1};
+        int [] arr={1,35,-32,4,-1};
        // sumTriangle(arr,5);
         // minElement(arr,5);
 
         //another approch is also there
+        System.out.println("Maximum element in Array "+getMax(arr,5));
+        System.out.println("Maximum element in Array "+getMin(arr,5));
+    }
+
+    private static int getMin(int[] arr, int size) {
+        if(size==1)
+        {
+            return arr[0];
+        }
+        int tempMin=getMin(arr,size-1);
+        return Math.min(tempMin,arr[size-1]);
+
+    }
+
+    private static int getMax(int[] arr,int size) {
+        //base case
+        if(size==1)
+        {
+            return arr[0];
+        }
+        int tempMax=getMax(arr, size-1);
+       return Math.max(tempMax,arr[size-1]);
     }
 
     private static void minElement(int[] arr, int size) {
