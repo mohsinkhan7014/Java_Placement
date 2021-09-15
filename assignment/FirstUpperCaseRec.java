@@ -3,10 +3,10 @@ package com.mohsin.assignment;
 public class FirstUpperCaseRec
 {
     public static void main(String[] args) {
-        String name="mohsin   mhan";
+        String name="mohsiM   KasjHhan";
 
         System.out.println(withoutRecursion(name));
-        System.out.println( findFirstUpper(name,0) );
+        System.out.println("With Recursion "+ findFirstUpper(name,0) );
 
     }
 
