@@ -3,10 +3,10 @@ package com.mohsin.assignment;
 public class FirstUpperCaseRec
 {
     public static void main(String[] args) {
-        String name="       mohsin   Khan";
+        String name="mohsin   mhan";
 
         System.out.println(withoutRecursion(name));
-       findFirstUpper(name,0,name.length());
+        System.out.println( findFirstUpper(name,0) );
 
     }
 
@@ -24,12 +24,17 @@ public class FirstUpperCaseRec
 
     }
 
-    private static char findFirstUpper(String name, int i,int length) {
-        if(name.charAt(0)>64 && name.charAt(0)<91)
+    private static char findFirstUpper(String name, int i) {
+        //base case
+        if(i>=name.length())
         {
-            return name.charAt(0);
+            return '0';
         }
-        findFirstUpper(name,i+1,name.length());
-        return '\0';
+        if(name.charAt(i) > 64 && name.charAt(i) < 91)
+        {
+            return name.charAt(i);
+        }
+        return findFirstUpper(name,i+1);
+
     }
 }
